@@ -13,3 +13,6 @@ class Location(models.Model):
         
     def delete_location(self):
         self.delete()
+    def update_location(self, name): 
+        self.name=name
+        self.save   
