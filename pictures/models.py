@@ -18,6 +18,11 @@ class Location(models.Model):
         self.name=name
         self.save   
         
+    @classmethod
+    def get_locations(cls):
+        locations = Location.objects.all()
+        return locations    
+        
         
         
 class Category(models.Model):

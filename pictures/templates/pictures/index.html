@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+
+{%extends 'pictures/base.html'%} 
+{% block content %}
+{%for image in images%}
+<div class="container">
+    <h1>{{image.name}}</h1>
+    <img src="{{image.image.url}}" alt="{{image.name}}" >
+</div>
+    {%endfor%}
+
+{% endblock %}
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +22,9 @@
     <title>PICTURES</title>
 </head>
 <body>
-    <H1 class="bg-danger">HOME</H1>
+    {%for image in images%}
+    <h1>{{image.name}}</h1>
+    <img src="{{image.image.url}}" alt="{{image.name}}" >
+    {%endfor%}
 </body>
-</html>
+</html> -->
