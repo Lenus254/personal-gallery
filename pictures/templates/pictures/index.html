@@ -2,12 +2,14 @@
 {%extends 'pictures/base.html'%} 
 {% block content %}
 {%for image in images%}
-<div class="row" style="float: left; width: 20%; border: 2px solid black;">
-    <div class="col-md-12">
-    <a href="" data-toggle="modal" data-target="#photo{{image.id}}">
-      <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" style="height: 30vh; width: 100%;">
-    </a>
-    </div>
+<div class="container-fluid mt-5 ">
+  <div class="row" style="float: left; width: 30%; padding: 5px; ">
+      <div class="col-md-12">
+      <a href="" data-toggle="modal" data-target="#photo{{image.id}}">
+        <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" style="height: 30vh; width: 100%;">
+      </a>
+      </div>
+  </div>
 </div>
 
     <div class="modal fade" id="photo{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -20,7 +22,7 @@
               </button>
             </div>
             <div class="modal-body">
-                <img src="{{image.image.url}}" alt="{{image.name}}" style="width: 100%;">
+                <img src="{{image.image.url}}" alt="{{image.name}}" style="width: 100%; height: 200px;">
                 
                 <p>Location:{{image.location}}</p>
                 <p>Description:{{image.description}}</p>
@@ -29,7 +31,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">copy</button>
+              <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
             </div>
           </div>
         </div>
