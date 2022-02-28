@@ -13,6 +13,7 @@ class Location(models.Model):
         
     def delete_location(self):
         self.delete()
+    
     def update_location(self, name): 
         self.name=name
         self.save   
@@ -30,6 +31,10 @@ class Category(models.Model):
 
     def delete_category(self):
         self.delete()
+        
+    def update_category(self, name): 
+        self.name=name
+        self.save     
         
         
 class Image(models.Model):
@@ -50,3 +55,27 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()      
+        
+    def update_image(self,image, name, description, category, location): 
+        self.image=image
+        self.name=name
+        self.description=description
+        self.category=category
+        self.location=location
+        self.save      
+        
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = cls.objects.filter(id=id).all()
+        return image 
+    
+    
+    @classmethod
+    def search_by_category(cls, category):
+        images = cls.objects.filter(category__name =category)
+        return images
+    
+    @classmethod
+    def filter_by_location(cls, location):
+        image_location = Image.objects.filter(location__name=location).all()
+        return image_location
