@@ -1,0 +1,1 @@
+web: gunicorn pictureshow.wsgi --log-file -
