@@ -9,16 +9,6 @@ This is a Django application for personal gallery that allows a user to upload i
 ##  Live Link  
  Click [View Site](https://lenisgallery.herokuapp.com/)  to visit the site
   
-## Screenshots 
-###### Home page
- 
-<img src="media/images/home.png">
- 
- ###### Search results
- <img src="media/images/search.png" >
-
- ###### Image Details 
- <img src="media/images/image_details.png">
  
 ## User Story  
   
