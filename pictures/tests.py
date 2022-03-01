@@ -33,4 +33,14 @@ def test_get_image_by_id(self):
         image = Image.objects.filter(id=self.image_test.id)
         self.assertTrue(found_image, image)
         
+def test_search_image_by_category(self):
+        category = 'travel'
+        found_img = self.image_test.search_by_category(category)
+        self.assertTrue(len(found_img) > 1)
+
+def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()        
+        
         
