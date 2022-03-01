@@ -44,3 +44,13 @@ def tearDown(self):
         Category.objects.all().delete()        
         
         
+def test_save_location(self):
+        self.location.save_location()
+        locations = Location.get_locations()
+        self.assertTrue(len(locations) > 0)
+        
+def test_delete_location(self):
+        self.location.delete_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) == 0)                
+        
