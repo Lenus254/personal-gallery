@@ -28,3 +28,9 @@ def test_delete_image(self):
         images = Image.objects.all()
         self.assertTrue(len(images) == 0)
         
+def test_get_image_by_id(self):
+        found_image = self.image_test.get_image_by_id(self.image_test.id)
+        image = Image.objects.filter(id=self.image_test.id)
+        self.assertTrue(found_image, image)
+        
+        
